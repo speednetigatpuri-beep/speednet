@@ -1,0 +1,12 @@
+# Cloudflare Pages: keep the temporary *.pages.dev copies out of Google,
+# so only https://speednetonline.in gets indexed.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+# Cache images and logos for a week
+/img/*
+  Cache-Control: public, max-age=604800
+/brand/*
+  Cache-Control: public, max-age=604800
