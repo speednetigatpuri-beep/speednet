@@ -28,7 +28,7 @@
   $$("main section[id]").forEach((s) => spy.observe(s));
 
   /* ---------- Reveal ---------- */
-  const targets = [".numbers > div", ".plan", ".use", ".why__list li", ".row", ".town", ".area__map", ".faq__list details", ".cta", ".head", ".why__side", ".review__photo", ".review__body", ".calc__intro"];
+  const targets = [".numbers > div", ".plan", ".use", ".why__list li", ".row", ".town", ".partners", ".contact__card", ".contact__map", ".faq__list details", ".cta", ".head", ".why__side", ".calc__intro"];
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
@@ -46,16 +46,30 @@
   };
   $$(targets.join(",")).forEach(addReveal);
 
-  // plan dials animate when the grid enters
-  const plans = $(".plans");
-  new IntersectionObserver((entries, o) => {
-    if (entries[0].isIntersecting) { plans.classList.add("is-in"); o.disconnect(); }
-  }, { threshold: 0.3 }).observe(plans);
+  /* ---------- Clients logo marquee ---------- */
+  // Duplicate the set once so the CSS animation (translateX -50%) loops seamlessly.
+  const track = $("#clientsTrack");
+  if (track) {
+    const originals = [...track.children];
+    originals.forEach((li) => {
+      const copy = li.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      $$("img", copy).forEach((img) => (img.alt = ""));
+      track.appendChild(copy);
+    });
+    // keep a steady ~40px/s speed whatever the screen size
+    const setDur = () => track.style.setProperty("--dur", `${Math.round(track.scrollWidth / 2 / 40)}s`);
+    setDur();
+    addEventListener("load", setDur);
+    let rt;
+    addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(setDur, 200); });
+  }
 
   /* ---------- PIN check (demo logic) ---------- */
   const pinForm = $("#check");
   const pinInput = $("#pinInput");
   const pinResult = $("#pinResult");
+  if (pinForm && pinInput && pinResult) {
   pinInput.addEventListener("input", () => (pinInput.value = pinInput.value.replace(/\D/g, "").slice(0, 6)));
   pinForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -68,23 +82,16 @@
     pinResult.textContent = "Checking…";
     await wait(500);
     const towns = { "422403": "Igatpuri", "422402": "Ghoti" };
-    const wa = (msg) => `https://wa.me/918149195597?text=${encodeURIComponent(msg)}`;
+    const wa = (msg) => `https://wa.me/919422214143?text=${encodeURIComponent(msg)}`;
     pinResult.innerHTML = towns[v]
-      ? `<span class="ok"><b>Yes — we serve ${towns[v]} (${v}).</b></span> <a class="ul" href="${wa(`Hi SpeedNet, I want a new connection in ${towns[v]} (${v}).`)}" target="_blank" rel="noopener">WhatsApp us your address</a> or call +91 81491 95597 to book installation.`
+      ? `<span class="ok"><b>Yes — we serve ${towns[v]} (${v}).</b></span> <a class="ul" href="${wa(`Hi SpeedNet, I want a new connection in ${towns[v]} (${v}).`)}" target="_blank" rel="noopener">WhatsApp us your address</a> or call <a class="ul" href="tel:+919422214143">+91 94222 14143</a> to book installation.`
       : `<span class="soon"><b>We don't cover ${v} yet.</b></span> <a class="ul" href="${wa(`Hi SpeedNet, is internet available at PIN ${v}?`)}" target="_blank" rel="noopener">Send us your location on WhatsApp</a> — we're expanding nearby.`;
   });
-
-  /* ---------- Billing toggle ---------- */
-  $$(".seg button").forEach((btn) => btn.addEventListener("click", () => {
-    $$(".seg button").forEach((b) => b.setAttribute("aria-selected", String(b === btn)));
-    const k = btn.dataset.bill;
-    $$(".price__amt").forEach((el) => (el.textContent = el.dataset[k]));
-    $$(".price__per").forEach((el) => (el.textContent = k === "y" ? "/month, billed yearly" : "/month"));
-  }));
+  }
 
   /* ---------- Use-case rail arrows ---------- */
   const rail = $("#usesRail");
-  $$("[data-scroll]").forEach((b) => b.addEventListener("click", () => {
+  if (rail) $$("[data-scroll]").forEach((b) => b.addEventListener("click", () => {
     const card = rail.querySelector(".use");
     rail.scrollBy({ left: (card.offsetWidth + 12) * +b.dataset.scroll, behavior: "smooth" });
   }));
@@ -104,6 +111,7 @@
     return m ? `${h} hr ${m} min` : `${h} hr`;
   };
   const table = $("#calcTable");
+  if (table) {
   table.innerHTML =
     `<div class="row row--head"><span>Download</span><span>SpeedNet</span><span>Hotspot, 15 Mbps</span></div>` +
     items.map((it) => `<div class="row"><div class="row__what"><b>${it.what}</b><span>${it.size} GB</span></div><div class="row__us" data-us></div><div class="row__them">${fmt((it.size * 8000) / (COPPER * 0.9))}</div></div>`).join("");
@@ -118,42 +126,8 @@
     setSpeed(+b.dataset.mbps);
   }));
   setSpeed(200);
+  }
 
-  /* ---------- Reviews (SAMPLE — replace with real customer reviews) ---------- */
-  const reviews = [
-    {
-      q: "“We both work from home and the kids have online classes. Since we switched to SpeedNet, nobody fights over the Wi‑Fi any more.”",
-      n: "Priya &amp; Sachin", m: "Family plan · Igatpuri",
-      img: "https://images.unsplash.com/photo-1665827488591-ddd6775bca13?w=800&q=75",
-    },
-    {
-      q: "“The engineer set everything up and showed us how to video call our grandson. When the line stopped once, they came the same evening.”",
-      n: "Ramesh &amp; Sunita", m: "Basic plan · Ghoti",
-      img: "https://images.unsplash.com/photo-1758686254501-afb794642cf3?w=800&q=75",
-    },
-    {
-      q: "“No more lag in online matches, even in the rain. And when I need help, I just WhatsApp them.”",
-      n: "Omkar", m: "Pro plan · Igatpuri",
-      img: "https://images.unsplash.com/photo-1758687126783-ea42f92dad72?w=800&q=75",
-    },
-  ];
-  let ri = 0;
-  const showReview = async (dir) => {
-    ri = (ri + dir + reviews.length) % reviews.length;
-    const r = reviews[ri];
-    const els = [$("#revQuote"), $("#revImg")];
-    els.forEach((el) => el.classList.add("is-swapping"));
-    await wait(300);
-    $("#revQuote").innerHTML = r.q;
-    $("#revName").innerHTML = r.n;
-    $("#revMeta").textContent = r.m;
-    $("#revImg").src = r.img;
-    $("#revCount").textContent = `${ri + 1} / ${reviews.length}`;
-    els.forEach((el) => el.classList.remove("is-swapping"));
-  };
-  $("#revPrev").addEventListener("click", () => showReview(-1));
-  $("#revNext").addEventListener("click", () => showReview(1));
-  reviews.forEach((r) => { const i = new Image(); i.src = r.img; }); // preload
-
-  $("#yr").textContent = new Date().getFullYear();
+  const yr = $("#yr");
+  if (yr) yr.textContent = new Date().getFullYear();
 })();
