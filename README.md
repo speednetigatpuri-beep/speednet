@@ -60,4 +60,4 @@ Then open http://localhost:5500.
 
 ## Google reviews
 
-The reviews section (`id="reviews"`) is copied by hand from the SpeedNet Google Business Profile (4.8 ★, 74 reviews at the time). To update: change the rating, review count, rating bars and review cards in `index.html` **and** in the three sub pages.
+The reviews section (`id="reviews"`) is copied by hand from the SpeedNet Google Business Profile (4.8 ★, 74 reviews at the time). To update: change the rating, review count and review cards in `index.html` **and** in the three sub pages.

@@ -475,22 +475,12 @@ address { font-style: normal; }
 .g-rating__stars { color: #fbbc04; letter-spacing: 1px; }
 .g-rating b { font-weight: 700; }
 
-.reviews-grid { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 12px; align-items: stretch; }
-.rsum { background: var(--ink); color: #f1f2ec; border-radius: var(--r-xl); padding: 30px 28px; display: flex; flex-direction: column; gap: 16px; }
-.rsum__head { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: .9rem; color: #d4d7cf; }
-.rsum__score { font-family: var(--f-head); font-size: 4.4rem; font-weight: 800; letter-spacing: -0.05em; line-height: .9; margin-right: 12px; }
-.rsum__stars { color: #fbbc04; font-size: 1.35rem; letter-spacing: 2px; vertical-align: 10px; }
-.rsum__count { color: #a9ada3; font-size: .95rem; }
-.rsum__count b { color: #f1f2ec; }
-.rbars { display: grid; gap: 7px; }
-.rbar { display: grid; grid-template-columns: 12px 1fr 24px; gap: 10px; align-items: center; font-size: .78rem; color: #a9ada3; }
-.rbar i { height: 6px; border-radius: 99px; background: #2b2e29; position: relative; overflow: hidden; }
-.rbar i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: #fbbc04; border-radius: inherit; }
-.rbar span:last-child { text-align: right; }
-.rsum__btns { display: grid; gap: 8px; margin-top: auto; padding-top: 8px; }
-.btn--ghost-light { border: 1.5px solid #3a3e37; color: #f1f2ec; }
-.btn--ghost-light:hover { border-color: var(--lime); color: var(--lime); }
-
+.reviews-grid { display: block; }
+.rsmall { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); color: var(--ink); font-size: .95rem; }
+.rsmall b { font-family: var(--f-head); font-size: 1.15rem; font-weight: 800; }
+.rsmall__stars { color: #fbbc04; letter-spacing: 1px; }
+.rsmall__links { display: flex; flex-wrap: wrap; gap: 18px; font-size: .92rem; }
+.rsmall__links a { color: var(--ink); }
 .rmain { display: grid; gap: 12px; align-content: start; }
 .rcards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .rcard { margin: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; display: flex; flex-direction: column; gap: 12px; }
@@ -506,19 +496,8 @@ address { font-style: normal; }
 .rquotes li { padding: 16px 18px; border-radius: var(--r-md); background: var(--white); border: 1px dashed #cfcabd; font-family: var(--f-head); font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; line-height: 1.35; }
 .section--tint .rquotes li { background: var(--paper); }
 
-@media (max-width: 1100px) {
-  .reviews-grid { grid-template-columns: minmax(0, 1fr); }
-  .rsum { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 28px; }
-  .rsum__head, .rsum__btns { grid-column: 1 / -1; }
-  .rsum__btns { grid-template-columns: 1fr 1fr; }
-}
 @media (max-width: 900px) {
   .rcards, .rquotes { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 600px) {
-  .rsum { grid-template-columns: minmax(0, 1fr); }
-  .rsum__btns { grid-template-columns: minmax(0, 1fr); }
-  .rsum__score { font-size: 3.6rem; }
 }
 
 /* ---------- floating WhatsApp ---------- */
