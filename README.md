@@ -3,7 +3,7 @@
 Website for **SpeedNet Internet Solutions** — fiber broadband in **Igatpuri & Ghoti**, Nashik district, Maharashtra.
 
 📞 Call / WhatsApp: **+91 94222 14143**  
-📍 Shop No. 05, Shubh Vastu Apt, Near Rohit Wines, Igatpuri 422403
+📍 Shop No. 05, Shubh Vastu Apt, Talegaon Rd, near Rohit Wines, Aswin Nagar, Igatpuri 422403
 
 ## Files
 
@@ -57,3 +57,7 @@ python -m http.server 5500
 ```
 
 Then open http://localhost:5500.
+
+## Google reviews
+
+The reviews section (`id="reviews"`) is copied by hand from the SpeedNet Google Business Profile (4.8 ★, 74 reviews at the time). To update: change the rating, review count, rating bars and review cards in `index.html` **and** in the three sub pages.
