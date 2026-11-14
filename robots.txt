@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://speednetigatpuri-beep.github.io/speednet/sitemap.xml
+Sitemap: https://speednetonline.in/sitemap.xml
