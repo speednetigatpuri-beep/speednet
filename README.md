@@ -14,6 +14,8 @@ Website for **SpeedNet Internet Solutions** — fiber broadband in **Igatpuri & 
 | `ghoti/index.html` | "WiFi connection in Ghoti" page (Ghoti Budruk) |
 | `resort-wifi-igatpuri/index.html` | "WiFi for resorts & hotels in Igatpuri" page |
 | `privacy-policy/index.html` | Privacy Policy (DPDP Act 2023), linked in every footer |
+| `about/`, `recharge/`, `contact/` | About us, Recharge & pay online (links to customer portal), Contact & grievance |
+| `terms/`, `refund-policy/`, `cancellation-policy/`, `service-delivery-policy/` | Policy pages for payment-gateway approval (linked in footer "Company" column) |
 | `styles.css` | Design and layout (shared by all pages) |
 | `script.js` | PIN check, clients logo carousel, download-time table, mobile menu (shared) |
 | `img/` | Website photos (free-licence Unsplash photos, stored locally as WebP) |

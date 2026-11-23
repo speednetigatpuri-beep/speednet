@@ -510,13 +510,34 @@ address { font-style: normal; }
 .legal__body h2 { font-size: 1.45rem; letter-spacing: -0.02em; margin-top: 36px; }
 .legal__body h3 { font-size: 1.08rem; letter-spacing: -0.01em; margin-top: 22px; }
 .legal__body p, .legal__body li { color: var(--ink-2); line-height: 1.7; }
-.legal__body ul { padding-left: 22px; display: grid; gap: 8px; }
+.legal__body ul, .legal__body ol { padding-left: 22px; display: grid; gap: 8px; }
 .legal__body strong { color: var(--ink); }
 .legal__contact { padding: 18px 20px; border-radius: var(--r-md); background: var(--paper); }
 .footer__legal a { text-decoration: underline; text-underline-offset: 3px; }
 .footer__legal a:hover { color: #f1f2ec; }
 @media (max-width: 600px) {
   .legal__body { padding: 26px 20px; border-radius: 22px; }
+}
+
+/* ---------- pay bill / cable tv / contact page ---------- */
+.nav__links a.nav__pay { padding: 6px 14px; border: 1.5px solid var(--ink); border-radius: 999px; font-weight: 600; }
+.nav__links a.nav__pay::after { display: none; }
+.nav__links a.nav__pay:hover { background: var(--ink); color: var(--white); }
+.cabletv { margin-top: 12px; display: flex; align-items: center; gap: 18px; padding: 18px 22px; border-radius: var(--r-lg); background: var(--white); border: 1px dashed #cfcabd; }
+.cabletv__icon { width: 44px; height: 44px; flex: none; border-radius: 12px; display: grid; place-items: center; background: var(--paper); }
+.cabletv__icon svg { width: 22px; height: 22px; }
+.cabletv__text { flex: 1; display: grid; gap: 2px; }
+.cabletv__text b { font-family: var(--f-head); font-size: 1.1rem; }
+.cabletv__text span { color: var(--muted); font-size: .93rem; }
+.legal__cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.legal__cta svg { width: 18px; height: 18px; }
+.legal__note { padding: 14px 18px; border-radius: var(--r-md); background: var(--paper); border-left: 4px solid var(--lime); }
+@media (max-width: 900px) {
+  .nav__links a.nav__pay { border: 0; padding: 14px 0; border-bottom: 1px solid var(--line); border-radius: 0; }
+}
+@media (max-width: 600px) {
+  .cabletv { flex-wrap: wrap; }
+  .cabletv .btn { width: 100%; }
 }
 
 /* ---------- floating WhatsApp ---------- */
@@ -565,7 +586,7 @@ address { font-style: normal; }
 
 /* ---------- footer ---------- */
 .footer { background: var(--ink); color: #c9ccc3; padding: 80px 0 104px; overflow: hidden; }
-.footer__top { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 40px; }
+.footer__top { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 36px; }
 .footer__about p:first-child { max-width: 340px; color: #e6e8e1; font-size: 1.05rem; }
 .footer__status { display: flex; align-items: center; gap: 8px; margin-top: 20px; font-size: .88rem; }
 .footer__status span { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); }

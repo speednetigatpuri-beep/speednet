@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="img/home-broadband-couple-igatpuri.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css?v=17" />
+  <link rel="stylesheet" href="styles.css?v=18" />
   <link rel="icon" type="image/svg+xml" href="brand/speednet-icon.svg" />
   <link rel="icon" type="image/png" sizes="512x512" href="brand/png/speednet-icon-512.png" />
   <link rel="apple-touch-icon" href="brand/png/apple-touch-icon.png" />
@@ -79,7 +79,8 @@
         "makesOffer": [
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home fiber broadband", "areaServed": "Igatpuri, Ghoti" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business internet for shops and offices", "areaServed": "Igatpuri, Ghoti" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WiFi for resorts, hotels and sites", "areaServed": "Igatpuri, Ghoti" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "WiFi for resorts, hotels and sites", "areaServed": "Igatpuri, Ghoti" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cable TV connection and recharge", "areaServed": "Igatpuri, Ghoti" } }
         ]
       },
       {
@@ -111,7 +112,7 @@
   <div class="topbar">
     <div class="wrap topbar__inner">
       <p class="topbar__offer"><span class="tag">Offer</span> <strong>FREE INSTALLATION ON YEARLY RECHARGE</strong></p>
-      <a href="tel:+919422214143">Call +91 94222 14143 →</a>
+      <a href="https://customer.speednetonline.in/" target="_blank" rel="noopener">Customer Login / Pay Bill →</a>
     </div>
   </div>
 
@@ -125,10 +126,10 @@
       <nav class="nav__links" id="navLinks" aria-label="Main">
         <a href="#plans">Internet</a>
         <a href="#network">Our network</a>
-        <a href="#clients">Clients</a>
         <a href="#reviews">Reviews</a>
         <a href="#coverage">Coverage</a>
         <a href="#contact">Contact</a>
+        <a href="https://customer.speednetonline.in/" class="nav__pay" target="_blank" rel="noopener">Pay Bill</a>
         <a href="https://wa.me/919422214143?text=Hi%20SpeedNet%2C%20I%20want%20a%20new%20connection" class="btn btn--ink nav__mobile-cta" target="_blank" rel="noopener">WhatsApp us</a>
       </nav>
       <div class="nav__right">
@@ -279,6 +280,13 @@
               <a href="tel:+919422214143" class="plan__call">or call +91 94222 14143</a>
             </div>
           </article>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="cabletv" id="cable-tv">
+          <div class="cabletv__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M9 3l3 3 3-3"/></svg></div>
+          <div class="cabletv__text"><b>Also available: Cable TV</b><span>Cable TV connection and recharge from SpeedNet. Call or WhatsApp us for available packages.</span></div>
+          <a href="https://wa.me/919422214143?text=Hi%20SpeedNet%2C%20please%20share%20Cable%20TV%20packages." class="btn btn--outline btn--sm" target="_blank" rel="noopener">Ask on WhatsApp</a>
         </div>
       </div>
     </section>
@@ -629,9 +637,10 @@
           <p class="footer__addr">Shop No. 05, Shubh Vastu Apt, Talegaon Rd, near Rohit Wines, Aswin Nagar, Igatpuri 422403</p>
           <p class="footer__addr mr" lang="mr">इगतपुरी व घोटी — फायबर इंटरनेट, वाय-फाय कनेक्शन</p>
         </div>
-        <div class="footer__col"><h4>Internet</h4><a href="#plans">Home broadband</a><a href="#plans">Shops &amp; offices</a><a href="resort-wifi-igatpuri/">Resort &amp; hotel WiFi</a><a href="#network">Our network</a></div>
+        <div class="footer__col"><h4>Internet</h4><a href="#plans">Home broadband</a><a href="#plans">Shops &amp; offices</a><a href="resort-wifi-igatpuri/">Resort &amp; hotel WiFi</a><a href="#cable-tv">Cable TV</a></div>
         <div class="footer__col"><h4>Areas</h4><a href="igatpuri/">Internet in Igatpuri</a><a href="ghoti/">Internet in Ghoti</a><a href="igatpuri/#talegaon">Talegaon</a><a href="https://wa.me/919422214143?text=Hi%20SpeedNet%2C%20is%20internet%20available%20at%20my%20location%3F" target="_blank" rel="noopener">Nearby villages</a></div>
         <div class="footer__col"><h4>Help</h4><a href="#help">FAQ</a><a href="#reviews">Reviews</a><a href="tel:+919422214143">Report a problem</a><a href="https://wa.me/919422214143" target="_blank" rel="noopener">WhatsApp</a><a href="#contact">Visit our office</a></div>
+        <div class="footer__col"><h4>Company</h4><a href="/about/">About us</a><a href="/recharge/">Recharge &amp; pay online</a><a href="/terms/">Terms &amp; conditions</a><a href="/privacy-policy/">Privacy policy</a><a href="/refund-policy/">Refund policy</a><a href="/cancellation-policy/">Cancellation policy</a><a href="/service-delivery-policy/">Service delivery policy</a><a href="/contact/">Contact &amp; grievance</a></div>
       </div>
       <p class="footer__word" aria-hidden="true">speednet</p>
       <div class="footer__bottom">
@@ -647,6 +656,6 @@
     <span>Chat with us</span>
   </a>
 
-  <script src="script.js?v=17"></script>
+  <script src="script.js?v=18"></script>
 </body>
 </html>
