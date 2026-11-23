@@ -13,6 +13,7 @@ Website for **SpeedNet Internet Solutions** — fiber broadband in **Igatpuri & 
 | `igatpuri/index.html` | "WiFi connection in Igatpuri" page (incl. Talegaon) |
 | `ghoti/index.html` | "WiFi connection in Ghoti" page (Ghoti Budruk) |
 | `resort-wifi-igatpuri/index.html` | "WiFi for resorts & hotels in Igatpuri" page |
+| `privacy-policy/index.html` | Privacy Policy (DPDP Act 2023), linked in every footer |
 | `styles.css` | Design and layout (shared by all pages) |
 | `script.js` | PIN check, clients logo carousel, download-time table, mobile menu (shared) |
 | `img/` | Website photos (free-licence Unsplash photos, stored locally as WebP) |

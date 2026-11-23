@@ -24,4 +24,9 @@
     <priority>0.8</priority>
     <image:image><image:loc>https://speednetonline.in/img/resort-wifi-igatpuri.webp</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://speednetonline.in/privacy-policy/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.3</priority>
+  </url>
 </urlset>
