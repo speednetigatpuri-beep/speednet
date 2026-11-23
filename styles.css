@@ -513,6 +513,9 @@ address { font-style: normal; }
 .legal__body ul, .legal__body ol { padding-left: 22px; display: grid; gap: 8px; }
 .legal__body strong { color: var(--ink); }
 .legal__contact { padding: 18px 20px; border-radius: var(--r-md); background: var(--paper); }
+.footer__note { margin-top: 40px; font-size: .82rem; color: #8f9389; max-width: 760px; }
+.footer__note a { text-decoration: underline; text-underline-offset: 3px; }
+.footer__note a:hover { color: #f1f2ec; }
 .footer__legal a { text-decoration: underline; text-underline-offset: 3px; }
 .footer__legal a:hover { color: #f1f2ec; }
 @media (max-width: 600px) {
