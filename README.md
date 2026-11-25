@@ -1,66 +1,32 @@
-# SpeedNet Internet Solutions
+# SpeedNet Internet Solutions — website
 
-Website for **SpeedNet Internet Solutions** — fiber broadband in **Igatpuri & Ghoti**, Nashik district, Maharashtra.
+Website for **SpeedNet Internet Solutions**, Igatpuri, Nashik: websites, WhatsApp and LinkedIn automation, social media management and AI automation.
+Hosted on Cloudflare and published to https://speednetonline.in on every push to `main`.
 
-📞 Call / WhatsApp: **+91 94222 14143**  
-📍 Shop No. 05, Shubh Vastu Apt, Talegaon Rd, near Rohit Wines, Aswin Nagar, Igatpuri 422403
+📞 Call / WhatsApp: **+91 94222 14143** · ✉️ speednetigatpuri@gmail.com
+
+The previous fiber-internet website is saved on the `archive/isp-site` branch.
 
 ## Files
 
-| File | What it is |
+| Path | What it is |
 |---|---|
-| `index.html` | Home page (connections, network, clients, coverage, contact, FAQ) |
-| `igatpuri/index.html` | "WiFi connection in Igatpuri" page (incl. Talegaon) |
-| `ghoti/index.html` | "WiFi connection in Ghoti" page (Ghoti Budruk) |
-| `resort-wifi-igatpuri/index.html` | "WiFi for resorts & hotels in Igatpuri" page |
-| `privacy-policy/index.html` | Privacy Policy (DPDP Act 2023), linked in every footer |
-| `about/`, `recharge/`, `contact/` | About us, Recharge & pay online (links to customer portal), Contact & grievance |
-| `terms/`, `refund-policy/`, `cancellation-policy/`, `service-delivery-policy/` | Policy pages for payment-gateway approval (linked in footer "Company" column) |
-| `styles.css` | Design and layout (shared by all pages) |
-| `script.js` | PIN check, clients logo carousel, download-time table, mobile menu (shared) |
-| `img/` | Website photos (free-licence Unsplash photos, stored locally as WebP) |
-| `brand/logos/` | Client and partner logos (taken from each company's official website or Wikimedia Commons) |
-| `sitemap.xml`, `robots.txt` | For Google — submit the sitemap in Google Search Console |
-
-## SEO
-
-- Each page has its own location-focused title, description, H1 and FAQ, plus structured data (LocalBusiness / Service, FAQPage, Breadcrumb) so Google understands the business, address, map location and areas served.
-- **Keep the business name, address and phone number exactly the same everywhere** (website, Google Business Profile, Justdial, Facebook): *SpeedNet Internet Solutions, Shop No. 05, Shubh Vastu Apt, Near Rohit Wines, Igatpuri 422403, +91 94222 14143*.
-- When you add or change a page, add it to `sitemap.xml`.
-
-## Logo
-
-All logo files are in [`brand/`](brand/) — SVG (sharp at any size, best for printing) and PNG in [`brand/png/`](brand/png/).
-
-| File | Use it for |
-|---|---|
-| `speednet-logo.png` / `.svg` | Main logo on white or light backgrounds — letterheads, bills, banners |
-| `speednet-logo-dark.png` / `.svg` | On black or dark backgrounds |
-| `speednet-logo-stacked*.png` / `.svg` | Square spaces — shop board, van door, flyers |
-| `speednet-profile-1024.png` | WhatsApp Business / Facebook / Instagram profile picture |
-| `speednet-icon-*.png` / `speednet-icon.svg` | App icon, favicon, stickers |
-| `speednet-share.png` | Image shown when the website link is shared on WhatsApp/Facebook |
-
-Colours: **Ink** `#111311` · **Lime** `#d2f34c` · **Paper** `#f4f2ec`. Fonts: Bricolage Grotesque (logo, headings) and Inter (text).
+| `index.html` | Home: work, services, automation examples, process, FAQ, contact form (opens WhatsApp) |
+| `pricing/`, `about/`, `contact/` | Pricing (quote based), About us, Contact & grievance |
+| `terms/`, `privacy-policy/`, `refund-policy/`, `cancellation-policy/`, `shipping-delivery-policy/` | Policy pages for payment-gateway approval |
+| `styles.css`, `script.js` | Design and small scripts shared by all pages |
+| `img/` | Screenshots of client websites (Brawnepak, GOCHCK) |
+| `brand/` | Logo icon, app icons and the WhatsApp/Facebook share image |
+| `_redirects` | Sends old internet-site links to the new pages |
+| `_headers`, `robots.txt`, `sitemap.xml` | Cloudflare headers and files for Google |
 
 ## Editing
 
-- **Connection types:** search for `class="plans plans--3"` in `index.html`. No prices are shown — every card has Contact-on-WhatsApp and Call buttons.
-- **Clients carousel:** add or remove `<li class="logo-tile">` items inside `id="clientsTrack"`. Put the logo file in `brand/logos/` and set its display height with `style="--h:40px"`. A client without a logo can use `<li class="logo-tile logo-tile--text"><b>Name</b><small>Igatpuri</small></li>`.
-- **Partners:** edit the `partners__row` list in `index.html`.
-- **Covered PIN codes:** edit `towns` in `script.js` (currently `422403` Igatpuri, `422402` Ghoti).
-- **Customer reviews:** none are shown yet. Send real reviews to add a reviews section.
-- **Area / resort pages:** each page in `igatpuri/`, `ghoti/` and `resort-wifi-igatpuri/` is plain HTML — edit the text directly. Keep the header, footer and contact block consistent with the home page.
-- After changing CSS or JS, bump the `?v=` number on the `<link>` / `<script>` tags in **every** page so browsers load the new version.
+- Every page is plain HTML. After changing `styles.css` or `script.js`, bump the `?v=` number on every page.
+- Add new pages to `sitemap.xml`.
 
 ## Run locally
 
 ```bash
 python -m http.server 5500
 ```
-
-Then open http://localhost:5500.
-
-## Google reviews
-
-The reviews section (`id="reviews"`) is copied by hand from the SpeedNet Google Business Profile (4.8 ★, 74 reviews at the time). To update: change the rating, review count and review cards in `index.html` **and** in the three sub pages.
